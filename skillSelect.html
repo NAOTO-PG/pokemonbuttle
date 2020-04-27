@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link th:href="@{/CSS/Turn1style.css}" rel="stylesheet" type="text/css" />
+<title>player1Turn</title>
+</head>
+<body>
+	<form method="post" action="butlle">
+		<p id="top">プレイヤー1のターンです</p>
+		<div class="container">
+			<div class="player1">
+				<p class="info">プレイヤー1情報</p>
+				<div class="left">
+					<p>
+						プレイヤー名：<em th:text="${playerList.get(0).getName()}"> </em>
+					</p>
+					<p>使用ポケモン</p>
+					<img th:src="@{${playerList.get(0).getimagePath()}}">
+				</div>
+				<div class="right">
+
+					<table border="5" align="center" width="200" bgcolor="white">
+						<caption>ステータス</caption>
+						<tr>
+							<td>タイプ</td>
+							<td><em
+								th:text="${playerList.get(0).getusePoke().getType()}"></em></td>
+						</tr>
+						<tr>
+							<td>HP</td>
+							<td><em th:text="${playerList.get(0).getusePoke().getHp()}"></em></td>
+						</tr>
+						<tr>
+							<td>攻撃力</td>
+							<td><em
+								th:text="${playerList.get(0).getusePoke().getAttack()}"></em></td>
+						</tr>
+						<tr>
+							<td>防御力</td>
+							<td><em
+								th:text="${playerList.get(0).getusePoke().getDefense()}"></em></td>
+						</tr>
+						<tr>
+							<td>素早さ</td>
+							<td><em
+								th:text="${playerList.get(0).getusePoke().getSpeed()}"></em></td>
+						</tr>
+					</table>
+					<br>
+					<p>
+						行動：<select name="selectSkill1">
+							<!-- ポケモン選択 -->
+							<option value="pikachu"><em
+									th:text="${playerList.get(0).getusePoke().getSkillList().get(0)}">
+								</em></option>
+							<option value="pikachu"><em
+									th:text="${playerList.get(0).getusePoke().getSkillList().get(1)}">
+								</em></option>
+							<option value="pikachu"><em
+									th:text="${playerList.get(0).getusePoke().getSkillList().get(2)}">
+								</em></option>
+							<option value="pikachu"><em
+									th:text="${playerList.get(0).getusePoke().getSkillList().get(3)}">
+								</em></option>
+						</select>
+					</p>
+				</div>
+			</div>
+
+			<div class="player2">
+				<p class="info">プレイヤー2情報</p>
+				<div class="left">
+					<p>
+						プレイヤー名：<em th:text="${playerList.get(1).getName()}"> </em>
+					</p>
+					<p>使用ポケモン</p>
+					<img th:src="@{${playerList.get(1).getimagePath()}}">
+				</div>
+				<div class="right">
+					<table border="5" align="center" width="200" bgcolor="white">
+						<caption>ステータス</caption>
+						<tr>
+							<td>タイプ</td>
+							<td><em
+								th:text="${playerList.get(1).getusePoke().getType()}"></em></td>
+						</tr>
+						<tr>
+							<td>HP</td>
+							<td><em th:text="${playerList.get(1).getusePoke().getHp()}"></em></td>
+						</tr>
+						<tr>
+							<td>攻撃力</td>
+							<td><em
+								th:text="${playerList.get(1).getusePoke().getAttack()}"></em></td>
+						</tr>
+						<tr>
+							<td>防御力</td>
+							<td><em
+								th:text="${playerList.get(1).getusePoke().getDefense()}"></em></td>
+						</tr>
+						<tr>
+							<td>素早さ</td>
+							<td><em
+								th:text="${playerList.get(1).getusePoke().getSpeed()}"></em></td>
+						</tr>
+					</table>
+					<br>
+					<p>
+						行動：<select name="selectSkill2">
+							<!-- ポケモン選択 -->
+							<option value="pikachu"><em
+									th:text="${playerList.get(1).getusePoke().getSkillList().get(0)}">
+								</em></option>
+							<option value="pikachu"><em
+									th:text="${playerList.get(1).getusePoke().getSkillList().get(1)}">
+								</em></option>
+							<option value="pikachu"><em
+									th:text="${playerList.get(1).getusePoke().getSkillList().get(2)}">
+								</em></option>
+							<option value="pikachu"><em
+									th:text="${playerList.get(1).getusePoke().getSkillList().get(3)}">
+								</em></option>
+						</select>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="bottom">
+			<p>選択が終わったら完了を押してください。</p>
+			<input type="submit" value="完了" />
+		</div>
+	</form>
+</body>
+</html>

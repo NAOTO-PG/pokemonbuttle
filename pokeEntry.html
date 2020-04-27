@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link th:href="@{/CSS/style.css}" rel="stylesheet" type="text/css" />
+<title>entryPage</title>
+</head>
+<body>
+	<form method="post" action="turnDecision">
+		<p id="top">プレイヤー1・プレイヤー2 それぞれの名前を入力し使用するポケモンを選んでください。</p>
+		<div class="container">
+			<div class="player1">
+				<p>プレイヤー1</p>
+				<input type="text" name="playerName1" /><br> 
+				<select
+					name="selectPoke1"><!-- ポケモン選択 -->
+					<option value="pikachu">ピカチュウ</option>
+					<option value="zenigame">ゼニガメ</option>
+				</select>
+			</div>
+
+			<div class=player2>
+				<p>プレイヤー2</p>
+				<input type="text" name="playerName2" /><br> 
+				<select
+					name="selectPoke2"><!-- ポケモン選択 -->
+					<option value="pikachu">ピカチュウ</option>
+					<option value="zenigame">ゼニガメ</option>
+				</select>
+			</div>
+			<div class="bottom">
+				<p>入力・選択が終わったら完了を押してください。</p>
+				<input type="submit" value="完了" />
+			</div>
+		</div>
+	</form>
+</body>
+</html>
